@@ -1,14 +1,41 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <button ion-button color="dark" block (click)="pageInput()">Tambah Data</button>
+        <table>
+          <thead>
+            <tr>
+              <th>Nama Barang</th>
+              <th>Qty</th>
+              <th>Harga</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="Data_Barang">
+            <tr *ngFor="let data of Data_Barang">
+              <td valign="top">{{data.nama_barang}}</td>
+              <td valign="top">{{data.qty}}</td>
+              <td valign="top">{{data.harga}}</td>
+              <td valign="top">
+                <a (click)="showConfirm(data.id_barang)">
+                  <ion-icon name="trash"></ion-icon>
+                </a>
+                <a (click)="pageEdit(data.id_barang)">
+                  <ion-icon name="create"></ion-icon>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

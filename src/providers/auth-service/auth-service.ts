@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Http, Headers, RequestOptions } from "@angular/http";
 import "rxjs/add/operator/map";
 //arahkan apiUrlnya ke alamat rest api yang kamu buat di tutorial part 1
-let apiUrl = "http://localhost/blog/crud/";
+let apiUrl = "http://localhost/crud/";
 
 @Injectable()
 export class AuthServiceProvider {

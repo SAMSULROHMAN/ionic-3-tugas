@@ -9,12 +9,14 @@ import { HomePage } from "../pages/home/home";
 import { AuthServiceProvider } from "../providers/auth-service/auth-service";
 import { CommonProvider } from "../providers/common/common";
 import { HttpModule } from "@angular/http";
+import { FormInputPage } from "../pages/form-input/form-input";
+import { FormEditPage } from "../pages/form-edit/form-edit";
 
 @NgModule({
-  declarations: [MyApp, HomePage],
+  declarations: [MyApp, HomePage, FormInputPage, FormEditPage],
   imports: [BrowserModule, HttpModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, HomePage],
+  entryComponents: [MyApp, HomePage, FormInputPage, FormEditPage],
   providers: [
     StatusBar,
     SplashScreen,

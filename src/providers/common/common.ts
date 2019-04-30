@@ -1,17 +1,16 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-
-/*
-  Generated class for the CommonProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
+import { Injectable } from "@angular/core";
+import { LoadingController } from "ionic-angular";
 @Injectable()
 export class CommonProvider {
+  public loader: any;
+  constructor(public loadingCtrl: LoadingController) {}
 
-  constructor(public http: HttpClient) {
-    console.log('Hello CommonProvider Provider');
+  presentLoading() {
+    this.loader = this.loadingCtrl.create({ content: "Please wait ..." });
+    this.loader.present();
   }
 
+  closeLoading() {
+    this.loader.dismiss();
+  }
 }
